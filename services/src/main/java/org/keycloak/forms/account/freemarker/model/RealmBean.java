@@ -17,6 +17,7 @@
 package org.keycloak.forms.account.freemarker.model;
 
 import org.keycloak.models.RealmModel;
+import org.keycloak.models.PasswordPolicy;
 
 import java.util.Set;
 
@@ -52,7 +53,9 @@ public class RealmBean {
             return getDisplayName();
         }
     }
-
+	public PasswordPolicy getPasswordPolicy() {
+		return realm.getPasswordPolicy();
+	}
     public boolean isInternationalizationEnabled() {
         return realm.isInternationalizationEnabled();
     }
